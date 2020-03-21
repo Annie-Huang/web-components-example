@@ -1,8 +1,11 @@
 https://www.youtube.com/watch?v=PCWaFLy3VUo&t=2s (Web Components Crash Course)
 https://codepen.io/bradtraversy/pen/wvaXKoK
-
 https://github.com/Annie-Huang/web-components-example
 
+https://docs.npmjs.com/cli/init
+
 ==================================================================================
+
+C:\react\web-components-example>npm init -y
 
 
