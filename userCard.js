@@ -48,6 +48,8 @@ class UserCard extends HTMLElement {
     constructor() {
         super();
 
+        this.showInfo = true;
+
         this.attachShadow({mode: 'open'});
         // cloneNode: Returns a copy of node. If deep is true, the copy also includes the node's descendants.
         this.shadowRoot.appendChild(template.content.cloneNode(true));
@@ -61,7 +63,19 @@ class UserCard extends HTMLElement {
     }
 
     toggleInfo() {
-        console.log(123);
+        // console.log(123);
+        this.showInfo = !this.showInfo;
+
+        const info = this.shadowRoot.querySelector('.info');
+        const toggleBtn = this.shadowRoot.querySelector('#toggle-info');
+
+        if(this.showInfo) {
+            info.style.display = 'block';
+            toggleBtn.innerText = 'Hide Info';
+        } else {
+            info.style.display = 'none';
+            toggleBtn.innerText = 'Show Info';
+        }
     }
 
     connectedCallback() {
