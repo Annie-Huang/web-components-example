@@ -6,7 +6,10 @@ template.innerHTML = `
         }
     </style>
     <div class="user-card">
-        <h3></h3>
+        <img />
+        <div>
+            <h3></h3>
+        </div>    
     </div>
 `;
 
@@ -20,6 +23,7 @@ class UserCard extends HTMLElement {
         // cloneNode: Returns a copy of node. If deep is true, the copy also includes the node's descendants.
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.shadowRoot.querySelector('h3').innerText = this.getAttribute('name');
+        this.shadowRoot.querySelector('img').src = this.getAttribute('avatar');
 
         // this.innerHTML = 'John Doe';
         // this.innerHTML = `<h3>${this.getAttribute('name')}</h3>`;
