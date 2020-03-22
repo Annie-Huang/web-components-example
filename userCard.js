@@ -59,6 +59,18 @@ class UserCard extends HTMLElement {
         // // This will keep this and parent component as coral, but we want style to be encapsulated.
         // this.innerHTML = `<style>h3 {color: coral}</style><h3>${this.getAttribute('name')}</h3>`;
     }
+
+    toggleInfo() {
+        console.log(123);
+    }
+
+    connectedCallback() {
+        this.shadowRoot.querySelector('#toggle-info').addEventListener('click', () => this.toggleInfo());
+    }
+
+    disconnectedCallback() {
+        this.shadowRoot.querySelector('#toggle-info').removeEventListener();
+    }
 }
 
 window.customElements.define('user-card', UserCard);
